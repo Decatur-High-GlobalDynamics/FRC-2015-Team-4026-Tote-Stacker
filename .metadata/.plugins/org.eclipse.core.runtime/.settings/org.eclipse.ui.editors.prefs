@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+org.eclipse.cdt.codan.ui.annotation.error.color=246,0,171
+org.eclipse.cdt.codan.ui.annotation.error.overview=false
+org.eclipse.cdt.codan.ui.annotation.error.text=false
+overviewRuler_migration=migrated_3.1

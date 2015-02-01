@@ -14,12 +14,12 @@ class Robot: public SampleRobot
 	DoubleSolenoid canLifter;
 	DoubleSolenoid crateHolder;
 	DoubleSolenoid cratePusher;
-	DoubleSolenoid *SolenoidArray[] = new DoubleSolenoid[5];
 	Joystick mainDriveStick; // arcade drive joystick
 	Joystick secondaryDriveStick; //joystick for left side tank drive
 	Joystick manipulatorStick;
-	DoubleSolenoid.Value kOff;
 	bool twistDrive=false;
+	bool intakeWheelsActuated=true;
+	float intakeWheelSpeed=1.0;
 public:
 	Robot() :
 			rightDriveMotor(0),
@@ -43,7 +43,14 @@ public:
 	}
 	float getAdjustedThrottle()
 	{
-		return 1-((mainDriveStick.GetThrottle()+1)/2);
+		if (mainDriveStick.GetThrottle()!=NULL)
+		{
+			return 1-((mainDriveStick.GetThrottle()+1)/2);
+		}
+		else
+		{
+			return 1;
+		}
 	}
 
 	float setDrive(float left, float right)
@@ -79,26 +86,71 @@ public:
 		float left=smoothJoyStick(secondaryDriveStick.GetY());
 		setDrive(left, right);
 	}
+	void ballScrewControl() //control manipulator height
+	{
+		//needs work
+	}
+	void canControl() //control trash can lifter and grabber
+	{
+		//needs work
+	}
+	void crateControl() //control crate pusher and holder
+	{
+		//needs work
+	}
+	void intakeWheelControl(int intakeMotorButton, int intakeActuationToggleButton)
+	{
+		if (manipulatorStick.GetRawButton(intakeMotorButton))
+		{
+			leftIntakeWheel.Set(intakeWheelSpeed);
+			rightIntakeWheel.Set(intakeWheelSpeed);
+		}
+		else
+		{
+			leftIntakeWheel.Set(intakeWheelSpeed);
+			rightIntakeWheel.Set(intakeWheelSpeed);
+		}
+		if (manipulatorStick.GetRawButton(intakeActuationToggleButton))
+		{
+			if (intakeWheelsActuated)
+			{
+				intakeWheelsActuation.Set(intakeWheelsActuation.kForward);
+			}
+			else
+			{
+				intakeWheelsActuation.Set(intakeWheelsActuation.kReverse);
+			}
+		}
+		else
+		{
+
+		}
+	}
+	void drive(int twistToggleButton) //automaticly decides which drive setup to use based on available joysticks, eventually remove arcade type toggle
+	{
+		if (secondaryDriveStick.GetButtonCount()!=NULL)
+		{
+			tankDrive();
+		}
+		else if (twistDrive && mainDriveStick.GetAxisCount() > 2)
+		{
+			twistArcadeDrive();
+		}
+		else
+		{
+			noTwistArcadeDrive();
+		}
+		if (mainDriveStick.GetRawButton(twistToggleButton))
+		{
+			twistDrive = oppositeBoolean(twistDrive);
+		}
+	}
 	void OperatorControl()
 	{
 		while (IsOperatorControl() && IsEnabled())
 		{
-			if (secondaryDriveStick.GetButtonCount()!=NULL)
-			{
-				tankDrive();
-			}
-			else if (twistDrive)
-			{
-				twistArcadeDrive();
-			}
-			else
-			{
-				noTwistArcadeDrive();
-			}
-			if (mainDriveStick.GetRawButton(2))
-			{
-				twistDrive = oppositeBoolean(twistDrive);
-			}
+			drive(2);
+			intakeWheelControl(7,8);
 			Wait(0.005);				// wait for a motor update time
 		}
 	}

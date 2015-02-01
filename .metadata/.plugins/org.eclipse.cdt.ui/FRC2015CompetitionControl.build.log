@@ -1,0 +1,20 @@
+21:13:18 **** Incremental Build of configuration Debug for project FRC2015CompetitionControl ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y -I/Users/darien/wpilib/cpp/current/include -I/Users/darien/Desktop/frc4026-2015/FRC2015CompetitionControl/src -O0 -g3 -Wall -c -fmessage-length=0 -o src/Robot.o ../src/Robot.cpp 
+../src/Robot.cpp: In member function 'float Robot::getAdjustedThrottle()':
+../src/Robot.cpp:46:37: warning: NULL used in arithmetic [-Wpointer-arith]
+   if (mainDriveStick.GetThrottle()!=NULL)
+                                     ^
+../src/Robot.cpp: In member function 'float Robot::setDrive(float, float)':
+../src/Robot.cpp:60:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+../src/Robot.cpp: In member function 'void Robot::drive(int)':
+../src/Robot.cpp:119:45: warning: NULL used in arithmetic [-Wpointer-arith]
+   if (secondaryDriveStick.GetButtonCount()!=NULL)
+                                             ^
+arm-frc-linux-gnueabi-g++ -L/Users/darien/wpilib/cpp/current/lib -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram src/Robot.o -lwpi 
+/usr/lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld: warning: libstdc++.so.6, needed by /Users/darien/wpilib/cpp/current/lib/libFRC_NetworkCommunication.so.1.5.0, may conflict with libstdc++.so.6.0.20
+
+21:13:20 Build Finished (took 1s.889ms)
+
