@@ -1,0 +1,115 @@
+19:37:03 **** Rebuild of configuration Debug for project FRC2015CompetitionControl ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y -I/Users/darien/wpilib/cpp/current/include -I/Users/darien/Desktop/frc4026-2015/FRC2015CompetitionControl/src -O0 -g3 -Wall -c -fmessage-length=0 -o src/Robot.o ../src/Robot.cpp 
+../src/Robot.cpp:21:16: error: expected unqualified-id before '.' token
+  DoubleSolenoid.Value kOff;
+                ^
+../src/Robot.cpp:17:56: error: no matching function for call to 'DoubleSolenoid::DoubleSolenoid()'
+  DoubleSolenoid *SolenoidArray[] = new DoubleSolenoid[5];
+                                                        ^
+../src/Robot.cpp:17:56: note: candidates are:
+In file included from /Users/darien/wpilib/cpp/current/include/WPILib.h:45:0,
+                 from ../src/Robot.cpp:1:
+/Users/darien/wpilib/cpp/current/include/DoubleSolenoid.h:30:2: note: DoubleSolenoid::DoubleSolenoid(uint8_t, uint32_t, uint32_t)
+  DoubleSolenoid(uint8_t moduleNumber, uint32_t forwardChannel, uint32_t reverseChannel);
+  ^
+/Users/darien/wpilib/cpp/current/include/DoubleSolenoid.h:30:2: note:   candidate expects 3 arguments, 0 provided
+/Users/darien/wpilib/cpp/current/include/DoubleSolenoid.h:29:11: note: DoubleSolenoid::DoubleSolenoid(uint32_t, uint32_t)
+  explicit DoubleSolenoid(uint32_t forwardChannel, uint32_t reverseChannel);
+           ^
+/Users/darien/wpilib/cpp/current/include/DoubleSolenoid.h:29:11: note:   candidate expects 2 arguments, 0 provided
+../src/Robot.cpp:17:56: error: array must be initialized with a brace-enclosed initializer
+  DoubleSolenoid *SolenoidArray[] = new DoubleSolenoid[5];
+                                                        ^
+../src/Robot.cpp: In member function 'float Robot::setDrive(float, float)':
+../src/Robot.cpp:53:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+../src/Robot.cpp: In member function 'virtual void Robot::OperatorControl()':
+../src/Robot.cpp:86:46: warning: NULL used in arithmetic [-Wpointer-arith]
+    if (secondaryDriveStick.GetButtonCount()!=NULL)
+                                              ^
+19:37:31 **** Incremental Build of configuration Debug for project FRC2015CompetitionControl ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y -I/Users/darien/wpilib/cpp/current/include -I/Users/darien/Desktop/frc4026-2015/FRC2015CompetitionControl/src -O0 -g3 -Wall -c -fmessage-length=0 -o src/Robot.o ../src/Robot.cpp 
+../src/Robot.cpp: In member function 'float Robot::setDrive(float, float)':
+../src/Robot.cpp:51:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+../src/Robot.cpp: In member function 'virtual void Robot::OperatorControl()':
+../src/Robot.cpp:84:46: warning: NULL used in arithmetic [-Wpointer-arith]
+    if (secondaryDriveStick.GetButtonCount()!=NULL)
+                                              ^
+arm-frc-linux-gnueabi-g++ -L/Users/darien/wpilib/cpp/current/lib -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram src/Robot.o -lwpi 
+/usr/lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld: warning: libstdc++.so.6, needed by /Users/darien/wpilib/cpp/current/lib/libFRC_NetworkCommunication.so.1.5.0, may conflict with libstdc++.so.6.0.20
+Info: Nothing to build for FRC2015CompetitionControl
+19:40:57 **** Incremental Build of configuration Debug for project FRC2015CompetitionControl ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y -I/Users/darien/wpilib/cpp/current/include -I/Users/darien/Desktop/frc4026-2015/FRC2015CompetitionControl/src -O0 -g3 -Wall -c -fmessage-length=0 -o src/Robot.o ../src/Robot.cpp 
+../src/Robot.cpp: In member function 'float Robot::setDrive(float, float)':
+../src/Robot.cpp:51:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+../src/Robot.cpp: In member function 'virtual void Robot::OperatorControl()':
+../src/Robot.cpp:84:46: warning: NULL used in arithmetic [-Wpointer-arith]
+    if (secondaryDriveStick.GetButtonCount()!=NULL)
+                                              ^
+arm-frc-linux-gnueabi-g++ -L/Users/darien/wpilib/cpp/current/lib -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram src/Robot.o -lwpi 
+/usr/lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld: warning: libstdc++.so.6, needed by /Users/darien/wpilib/cpp/current/lib/libFRC_NetworkCommunication.so.1.5.0, may conflict with libstdc++.so.6.0.20
+20:39:02 **** Incremental Build of configuration Debug for project FRC2015CompetitionControl ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y -I/Users/darien/wpilib/cpp/current/include -I/Users/darien/Desktop/frc4026-2015/FRC2015CompetitionControl/src -O0 -g3 -Wall -c -fmessage-length=0 -o src/Robot.o ../src/Robot.cpp 
+../src/Robot.cpp: In member function 'float Robot::getAdjustedThrottle()':
+../src/Robot.cpp:44:37: warning: NULL used in arithmetic [-Wpointer-arith]
+   if (mainDriveStick.GetThrottle()!=NULL)
+                                     ^
+../src/Robot.cpp: In member function 'float Robot::setDrive(float, float)':
+../src/Robot.cpp:58:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+../src/Robot.cpp: In member function 'virtual void Robot::OperatorControl()':
+../src/Robot.cpp:91:46: warning: NULL used in arithmetic [-Wpointer-arith]
+    if (secondaryDriveStick.GetButtonCount()!=NULL)
+                                              ^
+arm-frc-linux-gnueabi-g++ -L/Users/darien/wpilib/cpp/current/lib -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram src/Robot.o -lwpi 
+/usr/lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld: warning: libstdc++.so.6, needed by /Users/darien/wpilib/cpp/current/lib/libFRC_NetworkCommunication.so.1.5.0, may conflict with libstdc++.so.6.0.20
+Info: Nothing to build for FRC2015CompetitionControl
+21:12:15 **** Incremental Build of configuration Debug for project FRC2015CompetitionControl ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y -I/Users/darien/wpilib/cpp/current/include -I/Users/darien/Desktop/frc4026-2015/FRC2015CompetitionControl/src -O0 -g3 -Wall -c -fmessage-length=0 -o src/Robot.o ../src/Robot.cpp 
+../src/Robot.cpp: In member function 'float Robot::getAdjustedThrottle()':
+../src/Robot.cpp:46:37: warning: NULL used in arithmetic [-Wpointer-arith]
+   if (mainDriveStick.GetThrottle()!=NULL)
+                                     ^
+../src/Robot.cpp: In member function 'float Robot::setDrive(float, float)':
+../src/Robot.cpp:60:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+../src/Robot.cpp: In member function 'void Robot::intakeWheelControl(int, int)':
+../src/Robot.cpp:105:45: error: expected primary-expression before '.' token
+     intakeWheelsActuation.Set(DoubleSolenoid.kForward);
+                                             ^
+../src/Robot.cpp:109:37: error: 'class Robot' has no member named 'DoubleSolenoid'
+     intakeWheelsActuation.Set(this->DoubleSolenoid.kReverse);
+                                     ^
+../src/Robot.cpp: In member function 'void Robot::drive(int)':
+../src/Robot.cpp:119:45: warning: NULL used in arithmetic [-Wpointer-arith]
+   if (secondaryDriveStick.GetButtonCount()!=NULL)
+                                             ^
+21:13:18 **** Incremental Build of configuration Debug for project FRC2015CompetitionControl ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y -I/Users/darien/wpilib/cpp/current/include -I/Users/darien/Desktop/frc4026-2015/FRC2015CompetitionControl/src -O0 -g3 -Wall -c -fmessage-length=0 -o src/Robot.o ../src/Robot.cpp 
+../src/Robot.cpp: In member function 'float Robot::getAdjustedThrottle()':
+../src/Robot.cpp:46:37: warning: NULL used in arithmetic [-Wpointer-arith]
+   if (mainDriveStick.GetThrottle()!=NULL)
+                                     ^
+../src/Robot.cpp: In member function 'float Robot::setDrive(float, float)':
+../src/Robot.cpp:60:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+../src/Robot.cpp: In member function 'void Robot::drive(int)':
+../src/Robot.cpp:119:45: warning: NULL used in arithmetic [-Wpointer-arith]
+   if (secondaryDriveStick.GetButtonCount()!=NULL)
+                                             ^
+arm-frc-linux-gnueabi-g++ -L/Users/darien/wpilib/cpp/current/lib -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram src/Robot.o -lwpi 
+/usr/lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld: warning: libstdc++.so.6, needed by /Users/darien/wpilib/cpp/current/lib/libFRC_NetworkCommunication.so.1.5.0, may conflict with libstdc++.so.6.0.20
